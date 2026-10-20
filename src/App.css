@@ -1360,6 +1360,148 @@ section.split.band {
   50% { filter: drop-shadow(0 0 14px currentColor); }
 }
 
+/* ---------- IDEF0 diagram ---------- */
+.idef0-board {
+  background: var(--navy-950);
+  background-image: radial-gradient(circle at 10% 10%, rgba(124, 58, 237, 0.28), transparent 40%),
+    radial-gradient(circle at 90% 90%, rgba(214, 36, 159, 0.22), transparent 40%),
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: auto, auto, 28px 28px, 28px 28px;
+  border-radius: 20px;
+  padding: 36px 28px 28px;
+  box-shadow: var(--shadow-card);
+  color: var(--text-light);
+}
+
+.idef0-board-head {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.idef0-board-head h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+  margin: 0;
+  background: linear-gradient(90deg, #ffffff, #e9d5ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.idef0-board-head p {
+  color: rgba(245, 243, 251, 0.7);
+  font-size: 0.95rem;
+  margin-top: 6px;
+}
+
+.idef0-scroll {
+  overflow-x: auto;
+}
+
+.idef0-svg {
+  display: block;
+  width: 100%;
+  min-width: 860px;
+  height: auto;
+}
+
+.idef0-title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.idef0-line {
+  fill: none;
+  stroke-width: 3;
+  stroke-dasharray: 10 7;
+  animation: idef0Flow 0.9s linear infinite;
+}
+
+@keyframes idef0Flow {
+  to { stroke-dashoffset: -34; }
+}
+
+.idef0-line-glow {
+  fill: none;
+  stroke-width: 9;
+  opacity: 0.12;
+}
+
+.idef0-label {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  fill: rgba(245, 243, 251, 0.92);
+  transition: fill 0.2s ease;
+}
+
+.idef0-label-code {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.idef0-arrow:hover .idef0-line-glow {
+  opacity: 0.4;
+}
+
+.idef0-arrow:hover .idef0-label {
+  fill: #fff;
+}
+
+.idef0-process rect {
+  fill: #3b1c66;
+  stroke: #c084fc;
+  stroke-width: 3;
+  animation: idef0Glow 3s ease-in-out infinite;
+}
+
+@keyframes idef0Glow {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(214, 36, 159, 0.45)); }
+  50% { filter: drop-shadow(0 0 26px rgba(214, 36, 159, 0.85)); }
+}
+
+.idef0-process-body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 24px;
+  text-align: center;
+}
+
+.idef0-process-tag {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #e9d5ff;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 12px;
+  border-radius: 999px;
+}
+
+.idef0-process-name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #fff;
+}
+
+.idef0-node-id {
+  font-family: var(--font-display);
+  font-size: 15px;
+  fill: #f0abfc;
+}
+
 /* ---------- Inventario CTA ---------- */
 .cta-inventario {
   display: flex;
