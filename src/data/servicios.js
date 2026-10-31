@@ -1,0 +1,172 @@
+export const servicios = [
+  {
+    id: 'internet',
+    icon: 'wifi',
+    title: 'Servicios de Internet',
+    need: 'Conexión simétrica de alta velocidad',
+    providers: [
+      {
+        name: 'Tigo Business',
+        url: 'https://www.tigo.com.bo/empresas',
+        que: 'Es la división corporativa de Tigo en Bolivia. Ofrece internet dedicado por fibra óptica, enlaces de datos entre sedes y telefonía para empresas.',
+        paraQue: 'Es nuestro enlace principal: el equipo sube código, hace despliegues a la nube y atiende videollamadas con las clínicas sin cortes.',
+        como: 'Se instala un enlace de fibra hasta la oficina con ancho de banda dedicado y simétrico (misma velocidad de subida y bajada), IP pública fija y un acuerdo de nivel de servicio (SLA) con soporte 24/7.',
+      },
+      {
+        name: 'Entel Empresas',
+        url: 'https://www.entel.bo',
+        que: 'Es la línea corporativa de Entel, el operador con mayor cobertura del país, incluidas ciudades intermedias y zonas rurales.',
+        paraQue: 'Funciona como enlace de respaldo y nos permite llegar a centros médicos de provincia donde otros operadores no tienen cobertura.',
+        como: 'Ofrece internet dedicado por fibra, radioenlace o satélite según la zona, además de redes privadas (APN) para conectar dispositivos móviles de forma segura.',
+      },
+      {
+        name: 'AXS',
+        url: 'https://www.axsbolivia.com',
+        que: 'Es un proveedor boliviano especializado en internet y transmisión de datos para empresas sobre su propia red de fibra óptica.',
+        paraQue: 'Lo usamos como tercer enlace para tener redundancia: si un proveedor falla, la plataforma sigue en línea.',
+        como: 'El router de la oficina balancea el tráfico entre los enlaces y, si uno se cae, cambia automáticamente al otro (failover) sin que el equipo lo note.',
+      },
+    ],
+  },
+  {
+    id: 'talento',
+    icon: 'people',
+    title: 'Gestión de Talento Humano',
+    need: 'Gestión de planillas, cálculo de beneficios sociales (ley boliviana), vacaciones y asistencias',
+    providers: [
+      {
+        name: 'GeoVictoria',
+        url: 'https://www.geovictoria.com',
+        que: 'Es una plataforma en la nube de control de asistencia y gestión de turnos, usada por miles de empresas en Latinoamérica.',
+        paraQue: 'Registra las asistencias, atrasos, horas extra, vacaciones y permisos del equipo. Con esos datos se calculan las planillas y los beneficios sociales que exige la ley boliviana, como aguinaldo, bono de antigüedad, indemnización y aportes a la Gestora.',
+        como: 'Cada persona marca su entrada y salida desde la app (con GPS o reconocimiento facial), la web o un reloj biométrico. Todo se guarda en la nube y se generan reportes listos para planillas, que también se pueden exportar o integrar por API.',
+      },
+    ],
+    video: { id: 'rdLseaj0Kxs', title: 'Conoce GeoVictoria' },
+  },
+  {
+    id: 'aprendizaje',
+    icon: 'book',
+    title: 'Aprendizaje, capacitaciones y certificaciones',
+    need: 'Cursos técnicos para desarrolladores',
+    providers: [
+      {
+        name: 'Platzi Business',
+        url: 'https://platzi.com/business/',
+        que: 'Es la plataforma de educación online en español más grande de Latinoamérica, con rutas de aprendizaje en programación, cloud, datos, IA y habilidades blandas.',
+        paraQue: 'Capacitamos al equipo en español con rutas por rol (frontend, backend, QA, DevOps) y medimos su avance.',
+        como: 'La empresa compra licencias y, desde un panel de administración, asigna rutas a cada persona y ve su progreso. Los cursos son en video con ejercicios y exámenes que dan certificados.',
+      },
+      {
+        name: 'Udemy Business',
+        url: 'https://business.udemy.com',
+        que: 'Es la versión empresarial de Udemy, con una selección de miles de cursos técnicos actualizados, la mayoría en inglés.',
+        paraQue: 'La usamos para temas especializados y para preparar certificaciones oficiales como AWS, Scrum o Kubernetes.',
+        como: 'Funciona como una suscripción por usuario con acceso a todo el catálogo, laboratorios prácticos y reportes de uso para el área de talento humano.',
+      },
+    ],
+  },
+  {
+    id: 'cloud',
+    icon: 'cloud',
+    title: 'Cloud y Hosting',
+    need: 'Alojamiento de historias clínicas electrónicas (HCE) y bases de datos con alta seguridad',
+    providers: [
+      {
+        name: 'AWS (Amazon Web Services)',
+        url: 'https://aws.amazon.com',
+        que: 'Es la plataforma de nube más usada del mundo, con más de 200 servicios de cómputo, bases de datos, almacenamiento y seguridad.',
+        paraQue: 'Aloja la plataforma clínica, las historias clínicas electrónicas y las bases de datos de pacientes con cifrado y respaldos automáticos.',
+        como: 'Se paga solo por lo que se usa. Los servidores (EC2 o contenedores) corren la aplicación, RDS administra la base de datos con copias en varias zonas, S3 guarda archivos y estudios, y KMS cifra los datos. El acceso se controla con IAM y todo queda registrado para auditoría.',
+      },
+    ],
+    video: { id: 'a9__D53WsUs', title: 'What is AWS?' },
+  },
+  {
+    id: 'seguridad',
+    icon: 'shield',
+    title: 'Seguridad y Ciberseguridad',
+    need: 'Protección contra ataques y cifrado de datos sensibles de pacientes',
+    providers: [
+      {
+        name: 'Cloudflare',
+        url: 'https://www.cloudflare.com',
+        que: 'Es una red global que se pone delante de los sitios web para hacerlos más rápidos y protegerlos de ataques.',
+        paraQue: 'Protege la plataforma clínica contra ataques DDoS, bots e intentos de intrusión, y cifra todo el tráfico con HTTPS.',
+        como: 'El dominio apunta a Cloudflare, que actúa como intermediario: cada visita pasa primero por su red, donde el firewall (WAF) filtra el tráfico malicioso, y solo el tráfico limpio llega a nuestros servidores en AWS.',
+      },
+    ],
+    video: { id: '4td8rJuVqic', title: 'Cloudflare explicado' },
+  },
+  {
+    id: 'colaboracion',
+    icon: 'code',
+    title: 'Comunicación, gestión de proyectos y versionamiento',
+    need: 'Herramientas para coordinar al equipo, organizar el trabajo y versionar el código',
+    providers: [
+      {
+        name: 'Atlassian',
+        url: 'https://www.atlassian.com',
+        que: 'Es la empresa detrás de Jira, Confluence y Bitbucket, herramientas estándar para equipos de software.',
+        paraQue: 'En Jira manejamos el backlog y los sprints de Scrum, en Confluence documentamos y en Bitbucket guardamos y revisamos el código.',
+        como: 'Jira organiza el trabajo en historias y tareas sobre tableros; Confluence es una wiki del equipo; Bitbucket aloja los repositorios Git con pull requests y pipelines de CI/CD. Las tres se conectan entre sí.',
+      },
+      {
+        name: 'Microsoft',
+        url: 'https://www.microsoft.com/microsoft-365/business',
+        que: 'Con Microsoft 365 ofrece correo, Teams, OneDrive, SharePoint y Office, y a través de GitHub, la plataforma de código más usada.',
+        paraQue: 'Teams es nuestro canal de reuniones y chat diario, Outlook el correo corporativo y GitHub el repositorio de proyectos.',
+        como: 'Cada colaborador tiene una cuenta corporativa con acceso a todas las apps. Los archivos se guardan en la nube y se editan en tiempo real entre varias personas.',
+      },
+    ],
+    video: { id: 'obf7h7lSHsA', title: 'Introduction to Jira' },
+  },
+  {
+    id: 'pagos',
+    icon: 'card',
+    title: 'Pasarela de pagos',
+    need: 'Cobro de suscripciones (SaaS) a clínicas, consultorios o pacientes',
+    providers: [
+      {
+        name: 'Stripe',
+        url: 'https://stripe.com',
+        que: 'Es una plataforma de pagos en línea que permite cobrar con tarjeta y otros medios a través de una API.',
+        paraQue: 'Cobra las suscripciones mensuales o anuales a las clínicas y consultorios, y pagos puntuales de pacientes.',
+        como: 'Stripe Billing crea los planes y cobra automáticamente cada periodo, reintenta los pagos fallidos y emite facturas. Los datos de tarjeta nunca pasan por nuestros servidores. Como Stripe no opera directamente con empresas en Bolivia, se usa a través de una entidad en un país soportado.',
+      },
+    ],
+    video: { id: 'w4k00Tv6Pm8', title: 'Stripe explicado' },
+  },
+  {
+    id: 'prospectos',
+    icon: 'target',
+    title: 'Gestión de Prospectos',
+    need: 'Seguimiento del ciclo de ventas consultivas',
+    providers: [
+      {
+        name: 'HubSpot CRM',
+        url: 'https://www.hubspot.com/products/crm',
+        que: 'Es un CRM (gestor de relaciones con clientes) con una versión gratuita y módulos de marketing, ventas y servicio.',
+        paraQue: 'Registra cada clínica interesada y sigue su avance: primer contacto, demo, propuesta, negociación y cierre.',
+        como: 'Los prospectos se organizan en un pipeline de etapas. HubSpot guarda cada correo, llamada y reunión, envía recordatorios de seguimiento y genera reportes de ventas.',
+      },
+    ],
+    video: { id: 'MjeaPzGRNlM', title: 'What is HubSpot' },
+  },
+  {
+    id: 'soporte',
+    icon: 'chat',
+    title: 'Canal de soporte',
+    need: 'Canales de comunicación unificados para soporte a centros médicos',
+    providers: [
+      {
+        name: 'Zendesk',
+        url: 'https://www.zendesk.com',
+        que: 'Es una plataforma de atención al cliente que reúne en un solo lugar todas las consultas, vengan del canal que vengan.',
+        paraQue: 'Los centros médicos reportan incidencias por correo, chat, WhatsApp o teléfono, y el equipo las atiende desde una sola bandeja.',
+        como: 'Cada mensaje se convierte en un ticket con prioridad y responsable. Se aplican tiempos de respuesta (SLA), automatizaciones y una base de conocimiento para que las clínicas resuelvan dudas comunes por su cuenta.',
+      },
+    ],
+    video: { id: 'f2tu2G5MYH4', title: 'Zendesk Overview' },
+  },
+]

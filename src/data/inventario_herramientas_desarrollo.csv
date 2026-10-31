@@ -1,0 +1,101 @@
+id_herramienta_dev,nombre_herramienta,categoria_dev,estado_funcionamiento,version_aprobada,fecha_ultima_actualizacion,tipo_licencia,costo_total_usd,fecha_adquisicion,fecha_expiracion
+1,WebStorm,IDE,Activa,2025.2.3,2026-09-15,Suscripción,649,2023-02-10,2027-02-10
+2,Visual Studio Code,IDE,Activa,1.104.0,2026-09-22,Open Source,0,2021-03-01,
+3,IntelliJ IDEA Ultimate,IDE,Activa,2025.2.2,2026-09-08,Suscripción,719,2022-05-18,2027-05-18
+4,PyCharm Professional,IDE,Activa,2025.2.1,2026-08-27,Suscripción,349,2022-07-04,2027-07-04
+5,Cursor,Asistente IA,Activa,1.6.0,2026-09-29,Suscripción,480,2025-01-20,2027-01-20
+6,GitHub Copilot Business,Asistente IA,Activa,1.350.0,2026-09-18,Suscripción,2280,2024-03-12,2027-03-12
+7,Claude Code,Asistente IA,En Evaluación,2.0.14,2026-10-01,Suscripción,1200,2026-06-15,2027-06-15
+8,JetBrains AI Assistant,Asistente IA,En Evaluación,2025.2.1,2026-09-10,Suscripción,240,2026-04-22,2027-04-22
+9,Postman Team,Cliente API,Activa,11.62.5,2026-09-12,Suscripción,1440,2021-09-06,2027-09-06
+10,Insomnia,Cliente API,Deprecada,10.3.1,2025-11-20,Open Source,0,2020-08-14,
+11,Bruno,Cliente API,En Evaluación,2.9.0,2026-09-25,Open Source,0,2026-07-01,
+12,Swagger UI,Cliente API,Activa,5.28.1,2026-08-19,Open Source,0,2021-02-15,
+13,SwaggerHub Team,Cliente API,Activa,Cloud 2026.3,2026-09-03,Suscripción,1176,2022-01-31,2027-01-31
+14,DBeaver Ultimate,Cliente SQL,Activa,25.2.0,2026-09-05,Licencia Comercial,990,2023-06-12,2027-06-12
+15,DBeaver Community,Cliente SQL,Activa,25.2.1,2026-09-14,Open Source,0,2020-10-05,
+16,DataGrip,Cliente SQL,Activa,2025.2.2,2026-09-09,Suscripción,299,2022-03-21,2027-03-21
+17,pgAdmin,Cliente SQL,Activa,9.7,2026-08-30,Open Source,0,2020-04-17,
+18,MongoDB Compass,Cliente SQL,Activa,1.46.8,2026-08-12,Open Source,0,2021-11-09,
+19,TablePlus,Cliente SQL,Deprecada,6.4.2,2025-06-17,Licencia Comercial,89,2021-05-03,2026-12-31
+20,Redis Insight,Cliente SQL,Activa,2.70.0,2026-07-28,Open Source,0,2022-09-19,
+21,MUI X Pro,Librería UI,Activa,8.11.0,2026-09-16,Suscripción,1188,2023-08-08,2027-08-08
+22,Material UI,Librería UI,Activa,7.3.2,2026-09-11,Open Source,0,2021-04-12,
+23,Ant Design,Librería UI,Activa,5.27.3,2026-08-24,Open Source,0,2022-02-07,
+24,Tailwind CSS,Librería UI,Activa,4.1.13,2026-09-02,Open Source,0,2022-10-24,
+25,Tailwind UI,Librería UI,Activa,2026.1,2026-06-30,Licencia Comercial,299,2023-03-15,2027-03-15
+26,Chakra UI,Librería UI,Deprecada,2.10.9,2025-09-04,Open Source,0,2021-12-01,
+27,shadcn/ui,Librería UI,Activa,3.2.1,2026-09-20,Open Source,0,2024-02-26,
+28,Storybook,Librería UI,Activa,9.1.4,2026-09-07,Open Source,0,2022-06-13,
+29,React,Framework,Activa,19.1.1,2026-09-01,Open Source,0,2020-05-11,
+30,Next.js,Framework,Activa,15.5.3,2026-09-17,Open Source,0,2022-11-28,
+31,Angular,Framework,Activa,20.3.0,2026-09-13,Open Source,0,2020-09-14,
+32,Vue.js,Framework,En Evaluación,3.5.21,2026-08-06,Open Source,0,2026-05-18,
+33,Spring Boot,Framework,Activa,3.5.5,2026-09-04,Open Source,0,2021-01-25,
+34,NestJS,Framework,Activa,11.1.6,2026-08-29,Open Source,0,2023-04-03,
+35,FastAPI,Framework,Activa,0.116.1,2026-08-21,Open Source,0,2022-08-29,
+36,Node.js,Entorno / CLI,Activa,22.20.0,2026-10-02,Open Source,0,2020-03-09,
+37,Docker Desktop Business,Entorno / CLI,Activa,4.46.0,2026-09-24,Suscripción,1260,2021-07-19,2027-07-19
+38,Git,Entorno / CLI,Activa,2.51.0,2026-08-18,Open Source,0,2020-01-13,
+39,Kubernetes CLI (kubectl),Entorno / CLI,Activa,1.34.1,2026-09-19,Open Source,0,2022-04-11,
+40,Terraform CLI,Entorno / CLI,Activa,1.13.2,2026-09-06,Open Source,0,2023-01-23,
+41,Warp Terminal,Entorno / CLI,En Evaluación,0.2025.09.17,2026-09-21,Suscripción,216,2026-03-30,2027-03-30
+42,Figma Professional,Librería UI,Activa,125.8.4,2026-09-26,Suscripción,1800,2021-06-28,2027-06-28
+43,Datadog APM,Entorno / CLI,Activa,7.70.2,2026-09-23,Suscripción,2760,2023-10-02,2027-10-02
+44,Sentry Team,Entorno / CLI,Activa,25.9.0,2026-09-14,Suscripción,312,2022-12-05,2027-12-05
+45,Cypress Cloud,Entorno / CLI,Activa,15.2.0,2026-08-31,Suscripción,899,2023-05-22,2027-05-22
+46,Playwright,Framework,Activa,1.55.0,2026-09-10,Open Source,0,2023-09-11,
+47,SonarQube Developer,Entorno / CLI,Activa,2025.4,2026-07-15,Licencia Comercial,2500,2022-02-14,2027-02-14
+48,React Developer Tools,Entorno / CLI,Activa,6.1.5,2026-08-08,Open Source,0,2020-06-02,
+49,Jest,Framework,Activa,30.1.3,2026-08-25,Open Source,0,2020-07-20,
+50,Sourcetree,Entorno / CLI,Deprecada,3.4.25,2025-10-14,Licencia Comercial,60,2021-08-16,2026-11-30
+51,GitLab Premium,Entorno / CLI,Activa,18.4.1,2026-09-18,Suscripción,2340,2022-01-10,2027-01-10
+52,GitHub Enterprise,Entorno / CLI,Activa,3.17.4,2026-09-09,Suscripción,2520,2021-11-03,2027-11-03
+53,Jenkins,Entorno / CLI,Activa,2.528,2026-09-12,Open Source,0,2020-11-16,
+54,GitHub Actions Runner,Entorno / CLI,Activa,2.328.0,2026-09-27,Open Source,0,2022-03-07,
+55,Argo CD,Entorno / CLI,Activa,3.1.5,2026-09-16,Open Source,0,2023-07-17,
+56,Helm,Entorno / CLI,Activa,3.19.0,2026-09-11,Open Source,0,2022-05-09,
+57,Ansible,Entorno / CLI,En Evaluación,2.19.2,2026-08-14,Open Source,0,2026-04-06,
+58,AWS CLI,Entorno / CLI,Activa,2.28.21,2026-09-03,Open Source,0,2021-02-22,
+59,Azure CLI,Entorno / CLI,Activa,2.77.0,2026-09-08,Open Source,0,2022-09-26,
+60,Python,Entorno / CLI,Activa,3.13.7,2026-09-05,Open Source,0,2020-02-03,
+61,OpenJDK Temurin,Entorno / CLI,Activa,21.0.8,2026-08-20,Open Source,0,2021-05-24,
+62,pnpm,Entorno / CLI,Activa,10.16.1,2026-09-14,Open Source,0,2023-02-13,
+63,TypeScript,Framework,Activa,5.9.2,2026-09-02,Open Source,0,2020-12-07,
+64,Express.js,Framework,Activa,5.1.0,2026-07-22,Open Source,0,2020-06-15,
+65,Django,Framework,Activa,5.2.6,2026-09-10,Open Source,0,2022-01-17,
+66,Flask,Framework,Deprecada,3.1.2,2025-12-09,Open Source,0,2020-09-21,
+67,.NET SDK,Framework,Activa,9.0.305,2026-08-26,Open Source,0,2021-10-11,
+68,Flutter,Framework,En Evaluación,3.35.4,2026-09-19,Open Source,0,2026-05-04,
+69,React Native,Framework,Activa,0.81.4,2026-09-23,Open Source,0,2023-03-20,
+70,Vite,Framework,Activa,7.1.5,2026-09-15,Open Source,0,2022-07-25,
+71,Redux Toolkit,Framework,Activa,2.9.0,2026-08-17,Open Source,0,2021-03-29,
+72,TanStack Query,Framework,Activa,5.87.4,2026-09-06,Open Source,0,2023-06-05,
+73,Prisma ORM,Framework,Activa,6.16.2,2026-09-21,Open Source,0,2023-08-14,
+74,Hibernate ORM,Framework,Activa,6.6.29,2026-07-30,Open Source,0,2021-04-19,
+75,HAPI FHIR,Framework,Activa,8.4.0,2026-08-28,Open Source,0,2022-06-27,
+76,NextGen Connect (Mirth),Entorno / CLI,Activa,4.6.1,2026-07-09,Licencia Comercial,2800,2023-04-24,2027-04-24
+77,Hoppscotch,Cliente API,En Evaluación,2025.8.0,2026-09-04,Open Source,0,2026-06-08,
+78,Apidog,Cliente API,En Evaluación,2.7.4,2026-08-11,Suscripción,468,2026-05-26,2027-05-26
+79,Thunder Client,Cliente API,Activa,2.37.5,2026-08-03,Suscripción,120,2022-11-14,2027-11-14
+80,SoapUI Pro,Cliente API,Activa,5.8.0,2026-07-14,Licencia Comercial,1150,2021-12-13,2026-12-13
+81,Azure Data Studio,Cliente SQL,Deprecada,1.51.1,2025-02-12,Open Source,0,2021-08-23,
+82,MySQL Workbench,Cliente SQL,Activa,8.0.43,2026-07-18,Open Source,0,2020-05-27,
+83,Beekeeper Studio Ultimate,Cliente SQL,En Evaluación,5.3.4,2026-09-09,Licencia Comercial,168,2026-06-22,2027-06-22
+84,Navicat Premium,Cliente SQL,Deprecada,17.1.9,2025-08-05,Licencia Comercial,1099,2021-10-04,2026-12-04
+85,Grafana,Entorno / CLI,Activa,12.1.1,2026-09-13,Open Source,0,2022-10-03,
+86,Prometheus,Entorno / CLI,Activa,3.5.0,2026-08-22,Open Source,0,2022-10-03,
+87,PagerDuty Professional,Entorno / CLI,Activa,Cloud 2026.2,2026-08-07,Suscripción,1296,2023-01-09,2027-01-09
+88,Snyk Team,Entorno / CLI,Activa,1.1299.0,2026-09-17,Suscripción,2400,2023-03-06,2027-03-06
+89,Trivy,Entorno / CLI,Activa,0.66.0,2026-09-24,Open Source,0,2023-05-15,
+90,HashiCorp Vault,Entorno / CLI,Activa,1.20.3,2026-08-13,Open Source,0,2022-02-28,
+91,ESLint,Entorno / CLI,Activa,9.35.0,2026-09-12,Open Source,0,2020-04-20,
+92,Prettier,Entorno / CLI,Activa,3.6.2,2026-07-08,Open Source,0,2020-04-20,
+93,Chromatic,Librería UI,Activa,Cloud 2026.9,2026-09-25,Suscripción,1788,2023-02-27,2027-02-27
+94,Radix UI,Librería UI,Activa,1.4.3,2026-08-09,Open Source,0,2024-01-15,
+95,Bootstrap,Librería UI,Deprecada,5.3.8,2025-09-18,Open Source,0,2020-02-24,
+96,Headless UI,Librería UI,Activa,2.2.8,2026-08-27,Open Source,0,2023-09-18,
+97,AG Grid Enterprise,Librería UI,Activa,34.2.0,2026-09-20,Licencia Comercial,999,2022-08-08,2027-08-08
+98,Windsurf,Asistente IA,En Evaluación,1.12.0,2026-09-28,Suscripción,180,2026-07-13,2027-07-13
+99,Amazon Q Developer,Asistente IA,En Evaluación,1.78.0,2026-09-06,Suscripción,228,2026-05-11,2027-05-11
+100,Gemini Code Assist Standard,Asistente IA,Activa,2.48.0,2026-09-30,Suscripción,540,2026-02-09,2027-02-09
