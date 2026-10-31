@@ -23,6 +23,10 @@ const paths = {
   people: <><circle cx="9" cy="7" r="3" /><path d="M3 21c0-4 2.7-6.5 6-6.5s6 2.5 6 6.5" /><circle cx="17" cy="8" r="2.4" /><path d="M15 14.5c2.7.5 4.5 2.7 4.5 6.5" /></>,
   check: <path d="M5 12.5l4.5 4.5L19 7" />,
   calendar: <><rect x="4" y="5" width="16" height="15" rx="2" /><path d="M4 9.5h16" /><path d="M8 3v4M16 3v4" /><circle cx="8.3" cy="14" r="0.9" fill="currentColor" /><circle cx="12" cy="14" r="0.9" fill="currentColor" /><circle cx="15.7" cy="14" r="0.9" fill="currentColor" /></>,
+  wifi: <><path d="M2.5 9a14 14 0 0119 0" /><path d="M5.5 12.5a9.5 9.5 0 0113 0" /><path d="M8.5 16a5 5 0 017 0" /><circle cx="12" cy="19" r="0.9" fill="currentColor" /></>,
+  cloud: <path d="M7 19h10.5a4 4 0 00.6-7.95A6 6 0 006.4 9.6 4.75 4.75 0 007 19z" />,
+  card: <><rect x="3" y="5.5" width="18" height="13" rx="2" /><path d="M3 10h18" /><path d="M7 15h4" /></>,
+  chat: <><path d="M4 5.5h16v10H10l-4.5 3.5v-3.5H4v-10z" /><path d="M8 9.5h8M8 12.5h5" /></>,
   cycle: <><path d="M4.5 12a7.5 7.5 0 0113-5" /><path d="M17.5 5v4.5H13" /><path d="M19.5 12a7.5 7.5 0 01-13 5" /><path d="M6.5 19v-4.5H11" /></>,
 }
 

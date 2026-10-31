@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A-0 Software de Servicios Clínicos</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 24px 16px;
+      background: #808080;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #000;
+    }
+
+    .sheet-scroll {
+      overflow-x: auto;
+    }
+
+    /* Hoja estándar de BPwin: marco superior, área del diagrama y marco inferior */
+    .sheet {
+      width: 1000px;
+      margin: 0 auto;
+      background: #fff;
+      border: 2px solid #000;
+      box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.35);
+    }
+
+    table.frame {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+    }
+
+    table.frame td {
+      border: 1px solid #000;
+      padding: 3px 5px;
+      vertical-align: top;
+    }
+
+    .frame .lbl {
+      font-size: 9px;
+    }
+
+    .frame .val {
+      font-size: 11px;
+    }
+
+    table.frame .status td {
+      border: none;
+      padding: 0 4px 1px;
+      font-size: 10px;
+    }
+
+    .status .mark {
+      width: 10px;
+      text-align: center;
+    }
+
+    .notes span {
+      margin-right: 6px;
+    }
+
+    .context {
+      text-align: center;
+      vertical-align: middle !important;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .diagram {
+      display: block;
+      border-left: 1px solid #000;
+      border-right: 1px solid #000;
+    }
+
+    .diagram text {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      fill: #000;
+    }
+
+    .diagram .arrow {
+      stroke: #000;
+      stroke-width: 1.2;
+      fill: none;
+    }
+
+    .diagram .box {
+      fill: #fff;
+      stroke: #000;
+      stroke-width: 2;
+    }
+
+    .diagram .box-name {
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .diagram .small {
+      font-size: 11px;
+    }
+
+    .frame .title {
+      font-size: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="sheet-scroll">
+  <div class="sheet">
+
+    <!-- MARCO SUPERIOR -->
+    <table class="frame">
+      <tr>
+        <td rowspan="2" style="width: 120px;"><span class="lbl">USED AT:</span></td>
+        <td style="width: 330px;">
+          <span class="lbl">AUTHOR:</span> <span class="val">Área de Software - IATECH</span><br>
+          <span class="lbl">PROJECT:</span> <span class="val">IATECH Software Clínico</span>
+        </td>
+        <td style="width: 130px;">
+          <span class="lbl">DATE:</span> <span class="val">19/10/2026</span><br>
+          <span class="lbl">REV:</span> <span class="val">19/10/2026</span>
+        </td>
+        <td rowspan="2" style="width: 130px; padding: 2px;">
+          <table class="status">
+            <tr><td class="mark">X</td><td>WORKING</td></tr>
+            <tr><td class="mark"></td><td>DRAFT</td></tr>
+            <tr><td class="mark"></td><td>RECOMMENDED</td></tr>
+            <tr><td class="mark"></td><td>PUBLICATION</td></tr>
+          </table>
+        </td>
+        <td rowspan="2" style="width: 90px;">
+          <span class="lbl">READER:</span><br><br>
+          <span class="lbl">DATE:</span>
+        </td>
+        <td rowspan="2" class="context">
+          <span class="lbl" style="display: block; text-align: left; font-weight: normal;">CONTEXT:</span>
+          TOP
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="notes">
+          <span class="lbl">NOTES:</span>
+          <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+        </td>
+      </tr>
+    </table>
+
+    <!-- DIAGRAMA A-0 -->
+    <svg class="diagram" viewBox="0 0 1000 580" width="1000" height="580">
+      <defs>
+        <marker id="head" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+          <path d="M0,1.5 L10,5 L0,8.5 z" fill="#000" />
+        </marker>
+      </defs>
+
+      <!-- Controles (C) -->
+      <path class="arrow" d="M430,40 L430,220" marker-end="url(#head)" />
+      <text x="438" y="44">Normativas de Salud y Privacidad (HL7, FHIR, Protección de Datos)</text>
+      <path class="arrow" d="M500,95 L500,220" marker-end="url(#head)" />
+      <text x="508" y="99">Estándares de Calidad y Seguridad de Software</text>
+      <path class="arrow" d="M570,150 L570,220" marker-end="url(#head)" />
+      <text x="578" y="154">Políticas, Plazos y Presupuesto de IATECH</text>
+
+      <!-- Entradas (I) -->
+      <path class="arrow" d="M20,250 L380,250" marker-end="url(#head)" />
+      <text x="24" y="243">Requisitos Clínicos (HCE, Agendamiento, Citas)</text>
+      <path class="arrow" d="M20,290 L380,290" marker-end="url(#head)" />
+      <text x="24" y="283">Datos Operativos y de Pacientes</text>
+      <path class="arrow" d="M20,330 L380,330" marker-end="url(#head)" />
+      <text x="24" y="323">Feedback y Reportes de Errores (Bugs)</text>
+
+      <!-- Caja A-0 -->
+      <rect class="box" x="380" y="220" width="240" height="140" />
+      <text class="box-name" x="500" y="284" text-anchor="middle">Software de Servicios</text>
+      <text class="box-name" x="500" y="304" text-anchor="middle">Clínicos</text>
+      <text class="small" x="610" y="352" text-anchor="end">0</text>
+
+      <!-- Salidas (O) -->
+      <path class="arrow" d="M620,250 L980,250" marker-end="url(#head)" />
+      <text x="628" y="243">Plataforma Clínica Operativa (Módulos Web/App)</text>
+      <path class="arrow" d="M620,290 L980,290" marker-end="url(#head)" />
+      <text x="628" y="283">Informes y Registros Médicos Digitales</text>
+      <path class="arrow" d="M620,330 L980,330" marker-end="url(#head)" />
+      <text x="628" y="323">Datos Limpios y Estructurados para BI</text>
+
+      <!-- Mecanismos (M) -->
+      <path class="arrow" d="M460,470 L460,360" marker-end="url(#head)" />
+      <text x="468" y="480">Equipo de Desarrollo y Gestión (Devs, QA, PO)</text>
+      <path class="arrow" d="M540,420 L540,360" marker-end="url(#head)" />
+      <text x="548" y="430">Infraestructura Tecnológica (Cloud, Bases de Datos, IDEs)</text>
+
+      <!-- Propósito y punto de vista, como los muestra BPwin en el A-0 -->
+      <text class="small" x="20" y="540">Purpose: Modelar la gestión de software para los servicios clínicos de IATECH.</text>
+      <text class="small" x="20" y="558">Viewpoint: Área de Software (Dev Lead).</text>
+    </svg>
+
+    <!-- MARCO INFERIOR -->
+    <table class="frame">
+      <tr>
+        <td style="width: 120px;">
+          <span class="lbl">NODE:</span><br>
+          <span class="title">A-0</span>
+        </td>
+        <td>
+          <span class="lbl">TITLE:</span><br>
+          <span class="title">Gestión de Software para Servicios Clínicos</span>
+        </td>
+        <td style="width: 160px;">
+          <span class="lbl">NUMBER:</span><br>
+          <span class="val">IATECH-SW-01</span>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -9,6 +9,10 @@ import DescripcionPuestos from './components/DescripcionPuestos'
 import MBTI from './components/MBTI'
 import Scrum from './components/Scrum'
 import Bpmn from './components/Bpmn'
+import Idef0 from './components/Idef0'
+import Dashboard from './components/Dashboard'
+import Monitoreo from './components/Monitoreo'
+import SoporteExterno from './components/SoporteExterno'
 import './App.css'
 
 const TABS = [
@@ -21,6 +25,10 @@ const TABS = [
   { id: 'mbti', label: 'MBTI', Component: MBTI },
   { id: 'scrum', label: 'Scrum', Component: Scrum },
   { id: 'bpmn', label: 'BPMN', Component: Bpmn },
+  { id: 'idef0', label: 'IDEF0', Component: Idef0 },
+  { id: 'dashboard', label: 'Dashboard', Component: Dashboard },
+  { id: 'monitoreo', label: 'Monitoreo', Component: Monitoreo },
+  { id: 'soporte-externo', label: 'Soporte Externo', Component: SoporteExterno },
 ]
 
 export default function App() {
