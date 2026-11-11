@@ -13,6 +13,7 @@ import Idef0 from './components/Idef0'
 import Dashboard from './components/Dashboard'
 import Monitoreo from './components/Monitoreo'
 import SoporteExterno from './components/SoporteExterno'
+import Presupuesto from './components/Presupuesto'
 import './App.css'
 
 const TABS = [
@@ -29,6 +30,7 @@ const TABS = [
   { id: 'dashboard', label: 'Dashboard', Component: Dashboard },
   { id: 'monitoreo', label: 'Monitoreo', Component: Monitoreo },
   { id: 'soporte-externo', label: 'Soporte Externo', Component: SoporteExterno },
+  { id: 'presupuesto', label: 'Presupuesto del Área', Component: Presupuesto },
 ]
 
 export default function App() {
