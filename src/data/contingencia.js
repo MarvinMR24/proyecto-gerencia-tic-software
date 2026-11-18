@@ -1,7 +1,7 @@
 // Resumen del "Plan de Contingencia" (src/assets/PLAN CONTINGENCIAS SilkRoad.md)
 
 export const DOC_URL =
-  'https://docs.google.com/document/d/1lveKOULbA2xDvQOPb8_z-EJFAbM1Q2itwTm7sXEMpZg/edit?usp=sharing'
+  'https://drive.google.com/file/d/1JYWwdqpYkxGmQtQ3-ZZ2ssXLwB2OIfgc/view?usp=sharing'
 
 export const generalidades = [
   {
