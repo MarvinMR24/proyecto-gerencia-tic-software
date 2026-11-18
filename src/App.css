@@ -2624,6 +2624,23 @@ section.split.band {
 }
 
 /* ---------- Conclusiones ---------- */
+.concl-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.concl-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.concl-head .concl-tag {
+  margin-bottom: 2px;
+}
+
 .concl-list {
   margin: 0;
   padding-left: 1.2em;
