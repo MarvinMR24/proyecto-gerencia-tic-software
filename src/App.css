@@ -2598,3 +2598,268 @@ section.split.band {
   .budget-flow-value { font-size: 0.7rem; }
   .budget-flow-track { height: 180px; }
 }
+
+/* ---------- Contactos ---------- */
+.contact-card {
+  height: 100%;
+}
+
+.contact-email {
+  margin-top: auto;
+  padding-top: 12px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--purple-600);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.contact-email:hover {
+  text-decoration: underline;
+}
+
+.contact-single {
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+/* ---------- Conclusiones ---------- */
+.concl-list {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.concl-list li + li {
+  margin-top: 10px;
+}
+
+.concl-tag {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--purple-600);
+}
+
+/* ---------- Patrones WEKA ---------- */
+.weka-example {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--lavender-bg);
+}
+
+.weka-table td,
+.weka-table th {
+  text-align: left;
+  white-space: normal;
+  vertical-align: top;
+}
+
+.weka-table td:nth-child(n + 3):not(:last-child),
+.weka-table th:nth-child(n + 3):not(:last-child) {
+  white-space: nowrap;
+}
+
+.weka-tree-wrap {
+  overflow-x: auto;
+  padding: 8px 0 4px;
+}
+
+.tree-node {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.tree-question {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: var(--gradient-purple);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.tree-branches {
+  list-style: none;
+  margin: 0 0 0 18px;
+  padding: 0 0 0 18px;
+  border-left: 2px solid var(--lavender-bg-2);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tree-branches > li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  position: relative;
+}
+
+.tree-branches > li::before {
+  content: '';
+  position: absolute;
+  left: -18px;
+  top: 17px;
+  width: 14px;
+  border-top: 2px solid var(--lavender-bg-2);
+}
+
+.tree-answer {
+  flex-shrink: 0;
+  min-width: 82px;
+  padding: 7px 0;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.tree-leaf {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 6px 14px;
+  border-radius: 10px;
+  border-left: 5px solid var(--leaf);
+  background: var(--lavender-bg);
+  font-weight: 700;
+}
+
+.tree-leaf small {
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.weka-eval {
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) 1fr;
+  gap: 20px;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.weka-matrix caption {
+  caption-side: top;
+  text-align: left;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.weka-matrix td,
+.weka-matrix th {
+  text-align: center;
+}
+
+.weka-matrix td.is-hit {
+  font-weight: 800;
+  color: #2f7a2a;
+}
+
+.weka-matrix td.is-miss {
+  font-weight: 800;
+  color: #c0392b;
+}
+
+.weka-cluster {
+  height: 100%;
+  padding: 18px 20px;
+  border-radius: 14px;
+  border-top: 5px solid var(--cluster);
+  background: var(--lavender-bg);
+}
+
+.weka-cluster-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 12px 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.weka-cluster-stats strong {
+  display: block;
+  font-size: 1.2rem;
+  color: var(--text-dark);
+}
+
+.weka-cluster ul {
+  margin: 0;
+  padding-left: 1.1em;
+}
+
+@media (max-width: 720px) {
+  .weka-eval {
+    grid-template-columns: 1fr;
+  }
+}
+
+.weka-video-author {
+  margin: 10px 0 0;
+}
+
+.weka-resource {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.weka-resource .icon-badge {
+  margin-bottom: 12px;
+}
+
+.weka-resource .view-cargo-link {
+  margin-top: auto;
+}
+
+/* ---------- Plan de Contingencia ---------- */
+.contingency-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+}
+.contingency-card h3 { margin: 6px 0 0; }
+.contingency-card ul { margin: 0; padding-left: 18px; line-height: 1.6; }
+.contingency-card li + li { margin-top: 4px; }
+
+.contingency-facts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px 28px;
+}
+@media (max-width: 700px) {
+  .contingency-facts { grid-template-columns: 1fr; }
+}
+
+.risk-matrix th:not(:first-child),
+.risk-matrix td:not(:first-child) {
+  text-align: center;
+}
+.risk-dot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+.risk-0 { background: #2bb673; }
+.risk-1 { background: #8cc63f; }
+.risk-2 { background: #f2b705; }
+.risk-3 { background: #f07b2b; }
+.risk-4 { background: #e03c4b; }
+
+.contingency-doc {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+.contingency-doc .view-cargo-link { text-decoration: none; }
