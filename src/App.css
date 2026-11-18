@@ -18,11 +18,11 @@
 .nav-inner {
   max-width: 1600px;
   margin: 0 auto;
-  padding: 22px 28px;
+  padding: 10px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
@@ -33,15 +33,15 @@
   color: var(--text-light);
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   letter-spacing: 0.03em;
   white-space: nowrap;
 }
 
 .nav-brand-mark {
-  width: 20px;
-  height: 20px;
-  border-radius: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
   background: var(--gradient-accent);
   box-shadow: 0 0 16px rgba(214, 36, 159, 0.75);
 }
@@ -67,11 +67,11 @@
   border: none;
   background: transparent;
   color: rgba(245, 243, 251, 0.65);
-  padding: 12px 22px;
+  padding: 6px 12px;
   border-radius: 999px;
   cursor: pointer;
   font-family: var(--font-heading);
-  font-size: 1.05rem;
+  font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.02em;
   position: relative;
@@ -85,7 +85,7 @@
   top: 50%;
   transform: translateY(-50%);
   width: 1px;
-  height: 18px;
+  height: 12px;
   background: rgba(255, 255, 255, 0.14);
 }
 
@@ -104,9 +104,9 @@
   content: '';
   position: absolute;
   left: 50%;
-  bottom: -8px;
+  bottom: -4px;
   transform: translateX(-50%);
-  width: 26px;
+  width: 18px;
   height: 3px;
   border-radius: 3px;
   background: linear-gradient(90deg, #c084fc, #e0249f);
@@ -198,7 +198,7 @@ body.nav-open {
     right: 0;
     height: 100svh;
     width: min(320px, 82vw);
-    padding: 104px 20px 32px;
+    padding: 72px 20px 32px;
     background: var(--gradient-dark);
     box-shadow: -20px 0 50px -20px rgba(0, 0, 0, 0.6);
     overflow-y: auto;
@@ -2863,3 +2863,4 @@ section.split.band {
   margin-top: 28px;
 }
 .contingency-doc .view-cargo-link { text-decoration: none; }
+
