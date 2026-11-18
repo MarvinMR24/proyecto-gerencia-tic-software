@@ -13,9 +13,7 @@ import {
   csvUrl,
 } from '../data/inventario'
 import Reveal from './Reveal'
-
-// Cuando se agregue el libro de Tableau (.twbx) a /public, poner aquí su ruta, ej. '/dashboard.twbx'.
-const TABLEAU_URL = null
+import tableauUrl from '../assets/Dashboard_Inventario_Herramientas.twbx?url'
 
 const usd = (n) => `$${n.toLocaleString('en-US')}`
 
@@ -492,15 +490,9 @@ export default function Dashboard() {
         <Reveal className="cta-inventario">
           <h2 className="band-title">Descargas</h2>
           <div className="dash-downloads">
-            {TABLEAU_URL ? (
-              <a href={TABLEAU_URL} download className="cta-inventario-link">
-                Descargar dashboard de Tableau ↓
-              </a>
-            ) : (
-              <span className="cta-inventario-link is-disabled" aria-disabled="true">
-                Dashboard de Tableau · próximamente
-              </span>
-            )}
+            <a href={tableauUrl} download="Dashboard_Inventario_Herramientas.twbx" className="cta-inventario-link">
+              Descargar dashboard de Tableau ↓
+            </a>
             <a href={csvUrl} download="inventario_herramientas_desarrollo.csv" className="cta-inventario-link is-secondary">
               Descargar inventario (CSV) ↓
             </a>

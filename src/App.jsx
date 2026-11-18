@@ -11,9 +11,13 @@ import Scrum from './components/Scrum'
 import Bpmn from './components/Bpmn'
 import Idef0 from './components/Idef0'
 import Dashboard from './components/Dashboard'
+import Weka from './components/Weka'
 import Monitoreo from './components/Monitoreo'
 import SoporteExterno from './components/SoporteExterno'
+import PlanContingencia from './components/PlanContingencia'
 import Presupuesto from './components/Presupuesto'
+import Conclusiones from './components/Conclusiones'
+import Contactos from './components/Contactos'
 import './App.css'
 
 const TABS = [
@@ -25,12 +29,16 @@ const TABS = [
   { id: 'descripcion-puestos', label: 'Descripción de Posiciones', Component: DescripcionPuestos },
   { id: 'mbti', label: 'MBTI', Component: MBTI },
   { id: 'scrum', label: 'Scrum', Component: Scrum },
-  { id: 'bpmn', label: 'BPMN', Component: Bpmn },
   { id: 'idef0', label: 'IDEF0', Component: Idef0 },
+  { id: 'bpmn', label: 'BPMN', Component: Bpmn },
   { id: 'dashboard', label: 'Dashboard', Component: Dashboard },
+  { id: 'weka', label: 'Patrones WEKA', Component: Weka },
   { id: 'monitoreo', label: 'Monitoreo', Component: Monitoreo },
   { id: 'soporte-externo', label: 'Soporte Externo', Component: SoporteExterno },
+  { id: 'plan-contingencia', label: 'Plan de Contingencia', Component: PlanContingencia },
   { id: 'presupuesto', label: 'Presupuesto del Área', Component: Presupuesto },
+  { id: 'conclusiones', label: 'Conclusiones y Recomendaciones', Component: Conclusiones },
+  { id: 'contactos', label: 'Contactos', Component: Contactos },
 ]
 
 export default function App() {
