@@ -5,67 +5,102 @@ import Reveal from './Reveal'
 
 const usd = (n) => `$${n.toLocaleString('en-US')}`
 
+// Conclusiones: lo que aportó el equipo (aporte Team)
 const conclusiones = [
   {
     icon: 'compass',
-    tag: 'Fundamentos',
-    title: 'Gestión de la tecnología y CTI',
-    text: 'La gestión de la tecnología no se limita a comprar herramientas: implica planificar, adoptar, mantener y retirar tecnología de forma ordenada. Entender la relación entre ciencia, tecnología e innovación nos permitió ver al Área de Software como un espacio donde el conocimiento se convierte en soluciones concretas para el sector salud.',
+    tag: 'Aporte del equipo',
+    title: 'Conclusión general',
+    intro:
+      'Como equipo construimos el Área de Software de Silk Road desde sus bases: qué es la gestión de la tecnología, hacia dónde queremos ir, cómo nos organizamos, quiénes somos y cómo trabajamos.',
+    items: [
+      'La gestión de la tecnología no se limita a comprar herramientas: implica planificar, adoptar, mantener y retirar tecnología de forma ordenada, convirtiendo el conocimiento en soluciones concretas para el sector salud.',
+      'La misión y la visión enfocadas en el área médica le dieron un propósito común al equipo, y el organigrama con la descripción de puestos dejó claro quién es responsable de qué.',
+      'El MBTI mostró un equipo diverso y complementario: perfiles estratégicos (ENTJ, INTJ) que dirigen, uno práctico (ISTP) que resuelve, uno comunicativo (ENFP) para el soporte y uno cuidadoso (ISFJ) que mantiene el entorno estable.',
+    ],
   },
   {
     icon: 'target',
-    tag: 'Dirección',
-    title: 'Misión, visión y organización',
-    text: 'Definir una misión y una visión enfocadas en el área médica le dio un propósito común al equipo. El organigrama y la descripción de posiciones aclaran quién es responsable de qué, evitando duplicar tareas y dejando visibles las líneas de reporte desde la Subgerencia hasta cada rol técnico.',
+    tag: 'Aporte del equipo',
+    title: 'Conclusión del objetivo',
+    intro:
+      'El objetivo del área era planificar y ejecutar cada proyecto con calidad, alinear el trabajo con la estrategia de la organización y sostener en el tiempo los sistemas que construimos. Consideramos que se cumplió:',
+    items: [
+      'Planificar y ejecutar con calidad: Scrum nos da ciclos cortos de entrega, IDEF0 muestra la función del área con sus entradas, controles, salidas y mecanismos, y BPMN detalla el flujo desde el requerimiento hasta producción.',
+      'Alinear con la organización: cada cargo tiene un objetivo, una misión personal y una línea de reporte que conecta su trabajo con la Subgerencia y con la estrategia de la empresa.',
+      `Sostener en el tiempo: el presupuesto proyectado a ${META.meses} meses (${bs(presupuestoTotal)}) y el plan de contingencia aseguran los recursos y la respuesta ante fallas para que el área siga funcionando.`,
+    ],
   },
   {
-    icon: 'people',
-    tag: 'Personas',
-    title: 'MBTI y el perfil del equipo',
-    text: 'Los resultados del MBTI muestran un equipo diverso: perfiles estratégicos (ENTJ, INTJ) que planifican y dirigen, un perfil práctico (ISTP) para resolver problemas técnicos, un perfil comunicativo (ENFP) para el soporte y un perfil cuidadoso (ISFJ) para mantener el entorno estable. Esta mezcla coincide con los roles asignados y es una fortaleza del área.',
-  },
-  {
-    icon: 'cycle',
-    tag: 'Procesos',
-    title: 'Scrum, IDEF0 y BPMN',
-    text: 'Scrum ofrece un marco ágil para entregar valor en ciclos cortos. IDEF0 nos ayudó a ver la función principal del área con sus entradas, controles, salidas y mecanismos, y BPMN a detallar paso a paso el flujo de desarrollo, desde el requerimiento hasta producción. Usarlos juntos da una visión general y una visión detallada del mismo proceso.',
-  },
-  {
-    icon: 'chart',
-    tag: 'Datos',
-    title: 'Inventario y dashboard',
-    text: `El inventario registra ${TOOLS.length} herramientas con un costo anual de ${usd(totalCost)}. El dashboard revela que el gasto está concentrado en la categoría Entorno / CLI (casi la mitad del total), que la mayoría de las herramientas son open source y están activas, y que los puntos a atender son pocos y concretos: las deprecadas de Cliente SQL y Librería UI y los asistentes de IA en evaluación.`,
-  },
-  {
-    icon: 'dna',
-    tag: 'Patrones',
-    title: 'Minería de datos con WEKA',
-    text: 'Aplicar Apriori, J48 y SimpleKMeans al inventario mostró que la falta de actualización es la señal más clara de obsolescencia: las 8 herramientas deprecadas llevan más de 150 días sin actualizarse. Con solo dos preguntas, un árbol de decisión predice el estado de una herramienta con 98% de acierto.',
-  },
-  {
-    icon: 'shield',
-    tag: 'Operación',
-    title: 'Monitoreo y soporte externo',
-    text: 'Zabbix permite pasar de reaccionar a los problemas a anticiparlos, vigilando la plataforma clínica, los servidores en AWS y la expiración de licencias. A la vez, el área depende de proveedores externos (nube, seguridad, pagos, comunicación y soporte), por lo que conocer qué cubre cada uno es clave para la continuidad del servicio.',
-  },
-  {
-    icon: 'card',
-    tag: 'Recursos',
-    title: 'Presupuesto del área',
-    text: `El presupuesto proyectado a ${META.meses} meses suma ${bs(presupuestoTotal)}. Cerca de tres cuartas partes corresponden a inversión única (equipos y compras que se hacen una sola vez), mientras que los servicios recurrentes representan una porción menor, lo que hace al área sostenible una vez realizada la inversión inicial.`,
+    icon: 'code',
+    tag: 'Aporte del equipo',
+    title: 'Conclusiones tecnológicas',
+    intro:
+      'En lo tecnológico, el equipo pasó de tener herramientas sueltas a contar con una visión basada en datos de lo que usa, lo que cuesta y lo que necesita vigilar.',
+    items: [
+      `El inventario registra ${TOOLS.length} herramientas con un costo anual de ${usd(totalCost)}. El dashboard muestra que el gasto se concentra en Entorno / CLI (casi la mitad del total) y que la mayoría de las herramientas son open source y están activas.`,
+      'La minería de datos con WEKA (Apriori, J48 y SimpleKMeans) mostró que la falta de actualización es la señal más clara de obsolescencia: las 8 herramientas deprecadas llevan más de 150 días sin actualizarse, y un árbol de decisión predice el estado con 98% de acierto.',
+      'Zabbix permite pasar de reaccionar a los problemas a anticiparlos, y conocer qué cubre cada proveedor externo (nube, seguridad, pagos, comunicación y soporte) es clave para la continuidad del servicio.',
+    ],
   },
 ]
 
+// Recomendaciones: hacia el futuro
 const recomendaciones = [
-  'Revisar periódicamente las herramientas de Entorno / CLI, que concentran el mayor gasto, y evaluar alternativas open source o planes más económicos donde sea posible.',
-  'Reemplazar las herramientas deprecadas de Cliente SQL y Librería UI y tomar una decisión sobre los asistentes de IA que siguen en evaluación, ya que todos son de suscripción.',
-  'Conectar el inventario con Zabbix para recibir alertas automáticas antes de que una licencia o suscripción expire y cuando una herramienta pase 150 días sin actualizarse.',
-  'Mantener actualizados los diagramas IDEF0 y BPMN cada vez que cambie el proceso de desarrollo, para que sigan siendo una guía real del trabajo del equipo.',
-  'Aprovechar los perfiles MBTI al asignar tareas y al formar parejas de trabajo, combinando perfiles estratégicos con perfiles prácticos y de comunicación.',
-  'Aplicar Scrum de forma constante, con retrospectivas al final de cada sprint, para detectar mejoras en el proceso y en la comunicación del equipo.',
-  'Hacer seguimiento mensual del presupuesto comparando lo planificado con lo ejecutado, y priorizar la capacitación y certificación del equipo en las tecnologías que ya usamos.',
-  'Contar con un plan de contingencia documentado y probado para responder ante caídas de servicios, pérdida de información o fallas de proveedores externos.',
+  {
+    icon: 'rocket',
+    tag: 'A futuro',
+    title: 'Recomendaciones generales',
+    items: [
+      'Mantener viva la estructura del área: revisar cada año la misión, la visión, el organigrama y la descripción de puestos según crezca el equipo y cambien las necesidades del área médica.',
+      'Hacer seguimiento mensual del presupuesto comparando lo planificado con lo ejecutado, para ajustar a tiempo los gastos del área.',
+      'Probar el plan de contingencia con simulacros periódicos y actualizarlo cada vez que cambie un proveedor o un sistema crítico.',
+      'Aprovechar los perfiles MBTI al asignar tareas y formar parejas de trabajo, combinando perfiles estratégicos con perfiles prácticos y de comunicación.',
+    ],
+  },
+  {
+    icon: 'server',
+    tag: 'A futuro',
+    title: 'Recomendaciones tecnológicas',
+    items: [
+      'Reemplazar las herramientas deprecadas de Cliente SQL y Librería UI y decidir sobre los asistentes de IA que siguen en evaluación, ya que todos son de suscripción.',
+      'Revisar las herramientas de Entorno / CLI, que concentran el mayor gasto, y evaluar alternativas open source o planes más económicos.',
+      'Conectar el inventario con Zabbix para recibir alertas automáticas antes de que una licencia expire o cuando una herramienta pase 150 días sin actualizarse.',
+      'Volver a ejecutar el análisis en WEKA con datos nuevos para detectar a tiempo qué herramientas se están volviendo obsoletas.',
+    ],
+  },
+  {
+    icon: 'book',
+    tag: 'A futuro',
+    title: 'Recomendaciones académicas',
+    items: [
+      'Priorizar la capacitación y certificación del equipo en las tecnologías que ya usamos (nube, seguridad, monitoreo y metodologías ágiles).',
+      'Mantener actualizados los diagramas IDEF0 y BPMN y usarlos como material de inducción para nuevos integrantes del área.',
+      'Aplicar Scrum de forma constante, con retrospectivas al final de cada sprint, para aprender de cada ciclo y mejorar el proceso y la comunicación.',
+      'Seguir profundizando en minería de datos y análisis de información como herramientas para tomar decisiones tecnológicas basadas en evidencia.',
+    ],
+  },
 ]
+
+function Bloque({ data, tone }) {
+  return (
+    <article className="card panel concl-block">
+      <div className="concl-head">
+        <IconBadge name={data.icon} tone={tone} />
+        <div>
+          <span className="concl-tag">{data.tag}</span>
+          <h3 className="tight">{data.title}</h3>
+        </div>
+      </div>
+      {data.intro && <p>{data.intro}</p>}
+      <ul className="concl-list">
+        {data.items.map((t) => (
+          <li key={t}>{t}</li>
+        ))}
+      </ul>
+    </article>
+  )
+}
 
 export default function Conclusiones() {
   return (
@@ -74,52 +109,17 @@ export default function Conclusiones() {
         <h1>Conclusiones y Recomendaciones</h1>
       </section>
 
-      <section className="section">
-        <Reveal>
-          <div className="card panel">
-            <h2>Una mirada a todo el proyecto</h2>
-            <p>
-              A lo largo de este sitio construimos el Área de Software de Silk Road desde sus bases: qué es la gestión de
-              la tecnología, hacia dónde queremos ir, cómo nos organizamos, quiénes somos, cómo trabajamos, con qué
-              herramientas contamos, cómo las vigilamos y cuánto cuesta sostener todo. Estas son las conclusiones a las
-              que llegamos y las recomendaciones que proponemos para seguir mejorando.
-            </p>
-          </div>
-        </Reveal>
-      </section>
-
       <section className="band dark divider">
         <Reveal as="h2" className="band-title">
           Conclusiones
         </Reveal>
       </section>
-      <section className="section">
-        <div className="grid grid-2">
-          {conclusiones.map((c, i) => (
-            <Reveal key={c.title} delay={(i % 2) * 90}>
-              <article className="card">
-                <IconBadge name={c.icon} tone={i % 2 === 0 ? 'purple' : 'teal'} />
-                <span className="concl-tag">{c.tag}</span>
-                <h3 className="tight">{c.title}</h3>
-                <p className="small">{c.text}</p>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <section className="section" style={{ paddingTop: 0 }}>
-        <Reveal>
-          <div className="card panel">
-            <h2>Conclusión general</h2>
-            <p>
-              El Área de Software cuenta con una dirección clara, un equipo con perfiles complementarios, procesos
-              documentados y una visión basada en datos de sus herramientas y costos. El principal reto ya no es
-              construir la estructura, sino mantenerla viva: medir, revisar y ajustar de forma continua para que la
-              tecnología siga respondiendo a las necesidades del área médica.
-            </p>
-          </div>
-        </Reveal>
+      <section className="section concl-stack">
+        {conclusiones.map((c, i) => (
+          <Reveal key={c.title}>
+            <Bloque data={c} tone={i % 2 === 0 ? 'purple' : 'teal'} />
+          </Reveal>
+        ))}
       </section>
 
       <section className="band teal divider">
@@ -127,16 +127,12 @@ export default function Conclusiones() {
           Recomendaciones
         </Reveal>
       </section>
-      <section className="section">
-        <Reveal>
-          <div className="card panel">
-            <ol className="concl-list">
-              {recomendaciones.map((r) => (
-                <li key={r}>{r}</li>
-              ))}
-            </ol>
-          </div>
-        </Reveal>
+      <section className="section concl-stack">
+        {recomendaciones.map((r, i) => (
+          <Reveal key={r.title}>
+            <Bloque data={r} tone={i % 2 === 0 ? 'teal' : 'purple'} />
+          </Reveal>
+        ))}
       </section>
     </>
   )
