@@ -280,6 +280,80 @@ export default function Bpmn() {
           <BpmnDiagram />
         </Reveal>
       </section>
+
+      <section className="section">
+        <Reveal>
+          <div className="card panel">
+            <h2>Explicación del diagrama</h2>
+            <p>
+              El diagrama está dividido en cuatro carriles, uno por cada rol que participa en el
+              proceso. Las flechas de color siguen el camino normal del trabajo y las flechas
+              naranjas marcan los caminos de corrección, cuando algo no se aprueba y debe volver
+              atrás. El proceso empieza con el círculo verde (un requerimiento nuevo) y termina en
+              el círculo rojo (la versión publicada en producción).
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="grid grid-2" style={{ marginTop: 24 }}>
+          {BPMN_PASOS.map((p, i) => (
+            <Reveal key={p.lane} delay={(i % 2) * 90}>
+              <article className="card" style={{ borderTop: `4px solid ${LANE_COLOR[p.lane]}` }}>
+                <span className="concl-tag" style={{ color: LANE_COLOR[p.lane] }}>
+                  Paso {i + 1}
+                </span>
+                <h3 className="tight">{p.title}</h3>
+                <p className="small">{p.text}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal>
+          <div className="card panel" style={{ marginTop: 24, borderTop: '4px solid #f59e0b' }}>
+            <h3 className="tight">Decisiones y caminos de corrección</h3>
+            <ul className="concl-list">
+              <li>
+                <strong>¿Pruebas exitosas?</strong> Si las pruebas de caja blanca fallan, el Dev
+                Team corrige las pruebas y vuelve a ejecutarlas antes de entregar.
+              </li>
+              <li>
+                <strong>¿Aprobado?</strong> Si el Dev Lead no aprueba el desarrollo, devuelve el
+                avance y el Dev Team corrige la funcionalidad para volver a probarla.
+              </li>
+              <li>
+                <strong>¿Pruebas aprobadas?</strong> Si QA encuentra errores, registra la
+                devolución; el Dev Lead la analiza y asigna la corrección, el Scrum Master la
+                organiza y el Dev Team la resuelve, repitiendo el ciclo hasta que la versión
+                quede aprobada.
+              </li>
+            </ul>
+          </div>
+        </Reveal>
+      </section>
     </>
   )
 }
+
+const BPMN_PASOS = [
+  {
+    lane: 'devlead',
+    title: 'Dev Lead: recibe y prioriza',
+    text: 'El proceso inicia cuando llega un requerimiento. El Dev Lead lo recibe, lo analiza para entender qué se necesita y lo valida y prioriza según su importancia para el área.',
+  },
+  {
+    lane: 'scrum',
+    title: 'Scrum Master: organiza el sprint',
+    text: 'El requerimiento validado se incorpora al Backlog. El Scrum Master planifica el sprint y asigna las tareas al equipo de desarrollo.',
+  },
+  {
+    lane: 'devteam',
+    title: 'Dev Team: desarrolla y prueba',
+    text: 'El Dev Team analiza la tarea, desarrolla la funcionalidad y ejecuta pruebas de caja blanca. Si son exitosas, el desarrollo pasa al Dev Lead, que lo evalúa y, si cumple, lo aprueba.',
+  },
+  {
+    lane: 'qa',
+    title: 'QA: valida y libera',
+    text: 'QA testea el software aprobado. Si las pruebas son aprobadas, se aprueba la versión y se envía a producción, lo que cierra el proceso.',
+  },
+]
