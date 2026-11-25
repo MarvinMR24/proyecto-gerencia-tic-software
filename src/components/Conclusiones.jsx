@@ -1,5 +1,6 @@
 import { TOOLS, totalCost } from '../data/inventario'
 import { TOTAL as presupuestoTotal, META, bs } from '../data/presupuesto'
+import { mbtiResultados } from '../data/content'
 import { IconBadge } from './Icon'
 import Reveal from './Reveal'
 
@@ -44,6 +45,20 @@ const conclusiones = [
     ],
   },
 ]
+
+// Conclusiones personales: una por integrante, desde el rol que ocupa en el área
+const personales = {
+  'subgerente-software':
+    'Como Subgerente de Software aprendí que dirigir un área no es solo repartir tareas: es darle un rumbo claro con la misión, la visión y el organigrama, y sostenerlo con números. Armar el presupuesto, revisar el dashboard de Tableau y el plan de contingencia me mostró que las decisiones de un directivo deben apoyarse en datos y anticipar riesgos, para que cada proyecto se alinee con los objetivos de la empresa y se cumpla en plazo, costo y calidad.',
+  'lider-desarrollo':
+    'Desde el rol de Líder de Desarrollo concluyo que la calidad técnica depende de tener un proceso claro y conocido por todos. Modelar el flujo en BPMN e IDEF0 y organizarlo con Scrum me permitió ver dónde se evalúa, se aprueba o se devuelve el trabajo, y lo importante que es traducir los lineamientos de la Subgerencia en tareas concretas y estándares que reduzcan errores antes de llegar a producción.',
+  'desarrollador-sistemas':
+    'Como Desarrollador de Sistemas entendí que programar es solo una parte del trabajo: también hay que probar, documentar y corregir a tiempo. El proceso BPMN, con sus pruebas de caja blanca y sus caminos de corrección, me mostró que entregar funcionalidades estables en cada sprint depende de detectar los errores lo antes posible y de trabajar coordinado con soporte y QA.',
+  'analista-soporte':
+    'Desde el rol de Analista de Soporte al Desarrollo concluyo que un buen soporte es el puente entre los usuarios y el equipo técnico. Conocer los proveedores externos como Zendesk, el monitoreo con Zabbix y el plan de contingencia me enseñó que responder rápido a una incidencia requiere tener canales ordenados, alertas que avisen antes que el usuario y una comunicación clara con desarrollo para cerrar cada caso.',
+  'especialista-herramientas':
+    'Como Especialista de Herramientas de Desarrollo y Scrum Master aprendí que un equipo solo rinde si su entorno es estable. El inventario de 100 herramientas, el análisis con WEKA y el panel de monitoreo me mostraron que hay que vigilar licencias, versiones y herramientas deprecadas de forma continua, porque la falta de actualización es la señal más clara de que una herramienta va a dejar de servir y de que el equipo puede quedarse sin trabajar.',
+}
 
 // Recomendaciones: hacia el futuro
 const recomendaciones = [
@@ -120,6 +135,33 @@ export default function Conclusiones() {
             <Bloque data={c} tone={i % 2 === 0 ? 'purple' : 'teal'} />
           </Reveal>
         ))}
+      </section>
+
+      <section className="band dark divider">
+        <Reveal as="h2" className="band-title">
+          Conclusiones personales
+        </Reveal>
+      </section>
+      <section className="section">
+        <p className="centered muted" style={{ maxWidth: 680, margin: '0 auto 32px' }}>
+          Cada integrante comparte lo que concluye del proyecto desde el rol que ocupa dentro del Área de Software.
+        </p>
+        <div className="grid grid-2">
+          {mbtiResultados.map((m, i) => (
+            <Reveal key={m.positionId} delay={(i % 2) * 90}>
+              <article className="card panel concl-block">
+                <div className="concl-head">
+                  <IconBadge name="people" tone={i % 2 === 0 ? 'purple' : 'teal'} />
+                  <div>
+                    <span className="concl-tag">{m.role}</span>
+                    <h3 className="tight">{m.name}</h3>
+                  </div>
+                </div>
+                <p className="small">{personales[m.positionId]}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
       </section>
 
       <section className="band teal divider">
