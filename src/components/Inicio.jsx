@@ -69,7 +69,6 @@ export default function Inicio() {
                     .join('')}
                 </div>
                 <h3>{member.name}</h3>
-                <p className="muted small">{member.role}</p>
                 <p className="small">{member.bio}</p>
               </article>
             </Reveal>

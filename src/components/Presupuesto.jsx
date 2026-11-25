@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { META, CATEGORIES, TOTAL, ONE_TIME, MONTHLY, isMonthly, monthlyBreakdown, bs } from '../data/presupuesto'
 import { Icon, IconBadge } from './Icon'
 import Reveal from './Reveal'
+import ChartNote from './ChartNote'
 
 const pct = (n, of = TOTAL) => `${((n / of) * 100).toFixed(1)}%`
 
@@ -440,6 +441,17 @@ export default function Presupuesto() {
               ))}
             </div>
           </div>
+        </Reveal>
+        <Reveal>
+          <ChartNote>
+            <p>
+              La dona representa el presupuesto total de {bs(TOTAL)} para {META.meses} meses. Cada color es
+              una categoría de gasto y el tamaño de su segmento indica qué parte del total ocupa. A la derecha,
+              las barras ordenan las categorías de mayor a menor monto, con su valor en bolivianos y su
+              porcentaje. La categoría más grande es <strong>{sorted[0].nombre}</strong>, con{' '}
+              {pct(sorted[0].total)} del presupuesto.
+            </p>
+          </ChartNote>
         </Reveal>
       </section>
 

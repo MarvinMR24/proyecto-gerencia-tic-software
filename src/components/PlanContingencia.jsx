@@ -11,6 +11,7 @@ import {
 } from '../data/contingencia'
 import { IconBadge } from './Icon'
 import Reveal from './Reveal'
+import ChartNote from './ChartNote'
 
 export default function PlanContingencia() {
   return (
@@ -74,6 +75,15 @@ export default function PlanContingencia() {
                 </tbody>
               </table>
             </div>
+            <ChartNote title="¿Qué se ve en la matriz?">
+              <p>
+                Cada fila es una amenaza y el punto marca su nivel de riesgo, de muy bajo a muy alto. La
+                mayoría se concentra en <strong>muy alto</strong>: incendio, robo, vandalismo, fallas de
+                equipos, virus, acceso no autorizado y robo de datos, que son los que el plan prioriza.
+                Riesgos como terremotos, inundaciones o un desastre total aparecen en niveles bajos porque son
+                poco probables para el área.
+              </p>
+            </ChartNote>
           </div>
         </Reveal>
 

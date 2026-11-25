@@ -403,7 +403,7 @@ export default function Dashboard() {
   return (
     <>
       <section className="hero hero-sm">
-        <h1>Dashboard</h1>
+        <h1>Datos Tableau</h1>
       </section>
 
       <section className="section">

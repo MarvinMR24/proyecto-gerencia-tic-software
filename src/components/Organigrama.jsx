@@ -1,6 +1,7 @@
 import { orgChart } from '../data/content'
 import { Icon, IconBadge } from './Icon'
 import Reveal from './Reveal'
+import ChartNote from './ChartNote'
 
 function Node({ role, positionId, tier, onNavigate }) {
   return (
@@ -112,6 +113,16 @@ export default function Organigrama({ onNavigate }) {
             </Reveal>
           </div>
           <p className="muted centered note">{note}</p>
+          <ChartNote title="¿Qué se ve en el organigrama?">
+            <p>
+              El organigrama muestra la jerarquía del Área de Software en tres niveles. Arriba está la
+              Subgerencia de Software, que dirige el área. Debajo está el Líder de Desarrollo, que recibe
+              los lineamientos de la Subgerencia y coordina al equipo técnico. En el tercer nivel están
+              los tres cargos operativos: Desarrollador de Sistemas, Analista de Soporte al Desarrollo y
+              Especialista de Herramientas de Desarrollo, que reportan al Líder de Desarrollo. Las líneas
+              indican a quién reporta cada cargo.
+            </p>
+          </ChartNote>
         </div>
       </section>
     </>

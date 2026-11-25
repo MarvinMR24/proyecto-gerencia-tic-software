@@ -2623,6 +2623,30 @@ section.split.band {
   margin: 0 auto;
 }
 
+/* ---------- Explicación debajo de gráficos ---------- */
+.chart-note-box {
+  margin-top: 20px;
+  padding: 16px 20px;
+  border-left: 4px solid var(--purple-600);
+  border-radius: 12px;
+  background: var(--lavender-bg);
+  text-align: left;
+}
+
+.chart-note-box h3 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.chart-note-box p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.chart-note-box p + p {
+  margin-top: 8px;
+}
+
 /* ---------- Conclusiones ---------- */
 .concl-stack {
   display: flex;

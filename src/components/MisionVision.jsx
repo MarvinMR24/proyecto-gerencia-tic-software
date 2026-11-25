@@ -2,7 +2,7 @@ import { mbtiResultados } from '../data/content'
 import { IconBadge } from './Icon'
 import Reveal from './Reveal'
 
-export default function MisionVision({ onNavigate }) {
+export default function MisionVision() {
   return (
     <>
       <section className="hero hero-sm">
@@ -115,13 +115,12 @@ export default function MisionVision({ onNavigate }) {
       <section className="section">
         <p className="centered muted" style={{ maxWidth: 680, margin: '0 auto 32px' }}>
           Además de la misión y visión de Silk Road Software, cada integrante del equipo tiene
-          su propia misión y visión, según el cargo que ocupa dentro del Área de Software.
+          su propia misión y visión personal.
         </p>
         <div className="grid grid-3">
           {mbtiResultados.map((m, i) => (
             <Reveal key={m.name} delay={i * 70}>
               <article className="card panel position-assigned-card">
-                <p className="small muted tight">{m.role}</p>
                 <h3 className="position-card-title">{m.name}</h3>
                 <p className="small">
                   <strong>Misión:</strong> {m.misionPersonal}
@@ -129,9 +128,6 @@ export default function MisionVision({ onNavigate }) {
                 <p className="small">
                   <strong>Visión:</strong> {m.visionPersonal}
                 </p>
-                <button type="button" className="view-cargo-link" onClick={() => onNavigate?.(m.positionId)}>
-                  Ver descripción del cargo ↗
-                </button>
               </article>
             </Reveal>
           ))}
