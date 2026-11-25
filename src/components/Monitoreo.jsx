@@ -20,12 +20,12 @@ const COMPONENTS = [
   {
     icon: 'database',
     title: 'Base de datos',
-    text: 'MySQL o PostgreSQL. Guarda la configuración, el historial de métricas, las tendencias y los eventos.',
+    text: 'Guarda la configuración, el historial de métricas validadas, las tendencias y los eventos (en nuestra app: IndexedDB local).',
   },
   {
     icon: 'chart',
     title: 'Frontend web',
-    text: 'Interfaz en PHP para configurar todo y ver dashboards, gráficos, mapas de red y la lista de problemas en tiempo real.',
+    text: 'Interfaz para configurar, validar datos entrantes antes de persistir, ver dashboards, gráficos y problemas en tiempo real.',
   },
 ]
 
@@ -39,10 +39,11 @@ const CONCEPTS = [
 ]
 
 const STEPS = [
-  { title: 'Recolectar', text: 'Los agentes (o chequeos sin agente como SNMP, HTTP, ICMP o APIs) toman las métricas cada cierto intervalo.' },
-  { title: 'Almacenar', text: 'El servidor guarda cada valor en la base de datos como historial y lo resume en tendencias.' },
-  { title: 'Evaluar', text: 'Cada nuevo valor se compara contra los triggers configurados para detectar problemas.' },
-  { title: 'Reaccionar', text: 'Si un trigger se activa, se crea un problema y se ejecutan las acciones: alertas, escalamientos o autorreparación.' },
+  { title: '1. Recolectar', text: 'Los agentes y chequeos de telemetría capturan métricas y datos de inventario en tiempo real.' },
+  { title: '2. Validar (Pre-carga)', text: 'El frontend filtra esquemas, tipos, límites y fechas antes de autorizar el guardado en base de datos.' },
+  { title: '3. Almacenar', text: 'Solo los datos que superan la validación se persisten transaccionalmente en la base de datos (IndexedDB).' },
+  { title: '4. Evaluar', text: 'El motor de monitoreo compara las métricas válidas contra los triggers para detectar anomalías.' },
+  { title: '5. Reaccionar', text: 'Si un trigger se activa, se genera el problema en el dashboard, se calcula severidad y se habilita reconocimiento.' },
 ]
 
 const USES = [
@@ -51,6 +52,21 @@ const USES = [
   'Expiración de licencias y suscripciones del inventario de herramientas de desarrollo.',
   'Herramientas deprecadas que siguen en uso y versiones sin actualizar por mucho tiempo.',
   'Certificados SSL, DNS y protección de Cloudflare.',
+]
+
+const VALIDATION_PILLARS = [
+  {
+    title: 'Validación de Esquema y Tipos',
+    desc: 'Comprueba campos obligatorios, formatos numéricos no negativos (costo >= 0), rangos de latencia de 1 a 15,000 ms y pertenencia estricta a categorías del inventario.',
+  },
+  {
+    title: 'Coherencia Cronológica',
+    desc: 'Verifica que las fechas de adquisición no sean futuras y que las fechas de expiración de licencias sean posteriores a la adquisición, evitando discrepancias lógicas.',
+  },
+  {
+    title: 'Sanitización y Cuarentena',
+    desc: 'Neutraliza caracteres de inyección XSS. Si un payload es erróneo, la transacción a la base de datos se aborta y el registro se aísla en una bitácora de auditoría.',
+  },
 ]
 
 export default function Monitoreo() {
@@ -90,13 +106,13 @@ export default function Monitoreo() {
 
       <section className="band teal divider">
         <Reveal as="h2" className="band-title light">
-          ¿Cómo funciona?
+          ¿Cómo funciona el ciclo de monitoreo?
         </Reveal>
       </section>
       <section className="section">
-        <div className="grid grid-4">
+        <div className="grid grid-5">
           {STEPS.map((s, i) => (
-            <Reveal key={s.title} delay={i * 70}>
+            <Reveal key={s.title} delay={i * 60}>
               <div className="card centered step-card">
                 <span className="step-number">{i + 1}</span>
                 <h3 className="tight">{s.title}</h3>
@@ -126,8 +142,27 @@ export default function Monitoreo() {
         </div>
       </section>
 
+      {/* Sección destacada: Validación Pre-Carga */}
       <section className="band teal divider">
         <Reveal as="h2" className="band-title light">
+          Validación de Datos Pre-Carga a Base de Datos
+        </Reveal>
+      </section>
+      <section className="section">
+        <div className="grid grid-3">
+          {VALIDATION_PILLARS.map((p, i) => (
+            <Reveal key={p.title} delay={i * 70}>
+              <div className="card panel">
+                <h3>{p.title}</h3>
+                <p className="small">{p.desc}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section className="band dark divider">
+        <Reveal as="h2" className="band-title">
           Conceptos clave
         </Reveal>
       </section>
@@ -154,11 +189,15 @@ export default function Monitoreo() {
               licencia, días sin actualizar y costo. Los triggers marcan como problema las herramientas deprecadas,
               las licencias por vencer y las versiones desactualizadas.
             </p>
+            <p>
+              <strong>Capa de Ingesta y Validación Frontend:</strong> Implementamos un módulo de validación estricta
+              que opera en el navegador antes de cualquier inserción en la base de datos local (IndexedDB).
+              Esto previene que métricas corruptas, costos negativos o datos malformados ingresen al sistema,
+              aislando los errores en una bitácora de cuarentena visible en la pestaña <em>"Ingesta y Validación"</em> del monitor.
+            </p>
             <p className="small">
-              Es una simulación solo de frontend: un servidor Zabbix real necesita procesos corriendo todo el tiempo
-              (servidor, agentes y base de datos), algo que Vercel no ofrece porque solo sirve sitios estáticos y
-              funciones de corta duración. Para producción, Zabbix va en una instancia propia (por ejemplo en AWS) y
-              este panel podría leer sus datos por la API de Zabbix.
+              Es una solución completamente autónoma en frontend: la base de datos transaccional IndexedDB corre dentro
+              del navegador, asegurando persistencia e integridad de datos sin necesidad de aprovisionar un servidor o backend.
             </p>
           </div>
         </Reveal>
@@ -178,42 +217,9 @@ export default function Monitoreo() {
         </Reveal>
       </section>
 
-      <section className="section">
-        <div className="grid grid-2">
-          <Reveal>
-            <div className="card video-card">
-              <h3>Introducción a Zabbix</h3>
-              <div className="video-frame">
-                <iframe
-                  src="https://www.youtube.com/embed/iU-_8l66KDw"
-                  title="Introducción a Zabbix"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </Reveal>
-          <Reveal delay={120}>
-            <div className="card video-card">
-              <h3>Zabbix: Quick Overview (inglés)</h3>
-              <div className="video-frame">
-                <iframe
-                  src="https://www.youtube.com/embed/MWM447XYmtU"
-                  title="Zabbix - Quick Overview"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
       <section className="band dark divider">
         <Reveal className="cta-inventario">
-          <h2 className="band-title">Ver el monitor en vivo</h2>
+          <h2 className="band-title">Ver el monitor en vivo con Ingesta y Validación</h2>
           <a href="/monitoreo.html" target="_blank" rel="noopener noreferrer" className="cta-inventario-link">
             Abrir panel de monitoreo ↗
           </a>
