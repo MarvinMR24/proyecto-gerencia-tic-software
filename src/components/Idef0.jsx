@@ -1,4 +1,5 @@
 import Reveal from './Reveal'
+import ChartNote from './ChartNote'
 
 const COLOR = { C: '#f43f5e', I: '#38bdf8', O: '#34d399', M: '#fbbf24' }
 
@@ -164,6 +165,24 @@ export default function Idef0() {
       <section className="section">
         <Reveal>
           <Idef0Diagram />
+        </Reveal>
+        <Reveal>
+          <ChartNote title="¿Qué se ve en el diagrama?">
+            <p>
+              La caja del centro es la función principal del área: la gestión de software para servicios
+              clínicos. Por la <strong>izquierda</strong> entran los requisitos clínicos (historia clínica,
+              agendamiento y citas), los datos operativos y de pacientes, y los reportes de errores.
+              Por la <strong>derecha</strong> salen los resultados: la plataforma clínica funcionando, los
+              informes y registros médicos digitales y datos limpios listos para análisis.
+            </p>
+            <p>
+              Desde <strong>arriba</strong> bajan los controles que regulan el trabajo: las normas de salud
+              y privacidad (HL7, FHIR y protección de datos), los estándares de calidad y seguridad, y las
+              políticas, plazos y presupuesto de la empresa. Desde <strong>abajo</strong> suben los
+              mecanismos que lo hacen posible: el equipo de desarrollo y gestión, y la infraestructura
+              tecnológica (nube, bases de datos e IDEs).
+            </p>
+          </ChartNote>
         </Reveal>
       </section>
 

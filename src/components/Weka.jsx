@@ -16,6 +16,7 @@ import {
 } from '../data/weka'
 import { IconBadge } from './Icon'
 import Reveal from './Reveal'
+import ChartNote from './ChartNote'
 
 const CLASS_COLORS = { Activa: '#59a14f', 'En Evaluación': '#4e79a7', Deprecada: '#e15759' }
 
@@ -227,6 +228,15 @@ export default function Weka() {
             </tbody>
           </table>
         </div>
+        <ChartNote title="¿Qué se ve en la tabla?">
+          <p>
+            Cada fila es una regla que WEKA encontró en el inventario. La más fuerte es la primera: todas las
+            herramientas desactualizadas están deprecadas (100% de confianza y un lift de 12,5, es decir, es 12,5
+            veces más probable que una herramienta esté deprecada si está desactualizada). También se ve que las
+            herramientas nuevas suelen estar en evaluación, que todos los Asistentes IA son de suscripción y que
+            todos los Frameworks son open source.
+          </p>
+        </ChartNote>
       </ResultCard>
 
       <ResultCard number={2} title="Árbol de decisión del estado (J48)">
@@ -264,6 +274,19 @@ export default function Weka() {
             </table>
           </div>
         </div>
+        <ChartNote title="¿Qué se ve en el árbol y la matriz?">
+          <p>
+            El árbol se lee de arriba hacia abajo respondiendo preguntas. La primera es si la herramienta se
+            actualizó en los últimos 150 días: si la respuesta es no, está deprecada (8 casos, sin errores). Si es
+            sí, se mira su antigüedad: las antiguas e intermedias están activas y las nuevas están en evaluación.
+            Los números entre paréntesis indican cuántas herramientas llegan a cada hoja.
+          </p>
+          <p>
+            La matriz de confusión compara el estado real (filas) con el que predijo el árbol (columnas). Las
+            casillas de la diagonal son aciertos y las demás son errores: el árbol solo se equivocó en 2 de 100
+            herramientas, confundiendo una activa con una en evaluación y viceversa.
+          </p>
+        </ChartNote>
       </ResultCard>
 
       <ResultCard number={3} title="Grupos de herramientas (SimpleKMeans, k = 3)">
@@ -293,6 +316,16 @@ export default function Weka() {
             </article>
           ))}
         </div>
+        <ChartNote title="¿Qué se ve en los grupos?">
+          <p>
+            SimpleKMeans separó las 100 herramientas en tres grupos parecidos entre sí. En rojo están las
+            herramientas de pago, que concentran casi todo el gasto. En naranja, las open source heredadas: son
+            gratuitas pero las más antiguas y las que más tiempo llevan sin actualizarse, y ahí están 7 de las 8
+            deprecadas. En verde, los frameworks y librerías open source, sin costo y actualizados con frecuencia.
+            Esto muestra que el mayor riesgo de obsolescencia no está en lo que se paga, sino en las herramientas
+            gratuitas más viejas.
+          </p>
+        </ChartNote>
       </ResultCard>
 
       <section className="section">

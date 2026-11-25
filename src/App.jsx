@@ -8,6 +8,8 @@ import MisionVision from './components/MisionVision'
 import DescripcionPuestos from './components/DescripcionPuestos'
 import MBTI from './components/MBTI'
 import Scrum from './components/Scrum'
+import Goals from './components/Goals'
+import Inventarios from './components/Inventarios'
 import Bpmn from './components/Bpmn'
 import Idef0 from './components/Idef0'
 import Dashboard from './components/Dashboard'
@@ -29,14 +31,16 @@ const TABS = [
   { id: 'descripcion-puestos', label: 'Descripción de Posiciones', Component: DescripcionPuestos },
   { id: 'mbti', label: 'MBTI', Component: MBTI },
   { id: 'scrum', label: 'Scrum', Component: Scrum },
+  { id: 'goals', label: 'Goals Objetivos y asignación de personal', Component: Goals },
+  { id: 'inventarios', label: 'Inventarios', Component: Inventarios },
   { id: 'idef0', label: 'IDEF0', Component: Idef0 },
   { id: 'bpmn', label: 'BPMN', Component: Bpmn },
-  { id: 'dashboard', label: 'Dashboard', Component: Dashboard },
+  { id: 'dashboard', label: 'Datos Tableau', Component: Dashboard },
   { id: 'weka', label: 'Patrones WEKA', Component: Weka },
   { id: 'monitoreo', label: 'Monitoreo', Component: Monitoreo },
+  { id: 'presupuesto', label: 'Presupuesto del Área', Component: Presupuesto },
   { id: 'soporte-externo', label: 'Soporte Externo', Component: SoporteExterno },
   { id: 'plan-contingencia', label: 'Plan de Contingencia', Component: PlanContingencia },
-  { id: 'presupuesto', label: 'Presupuesto del Área', Component: Presupuesto },
   { id: 'conclusiones', label: 'Conclusiones y Recomendaciones', Component: Conclusiones },
   { id: 'contactos', label: 'Contactos', Component: Contactos },
 ]
